@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Detectives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="game-title">SAMPLE DETECTIVES</h1>
+
+        <div id="start-screen" class="screen active">
+            <p>Pon a prueba tu oído. ¿Puedes encontrar el sample?</p>
+            <button id="start-button">¡EMPEZAR A JUGAR!</button>
+        </div>
+
+        <div id="genre-screen" class="screen">
+            <h2>Elige tu Campo de Investigación Musical:</h2>
+            <div id="genre-options">
+                <button class="genre-button" data-genre="Hip-Hop/Rap">Hip-Hop/Rap</button>
+                <button class="genre-button" data-genre="Pop">Pop</button>
+                <button class="genre-button" data-genre="Electronica/Dance">Electrónica/Dance</button>
+                <button class="genre-button" data-genre="Funk/Soul">Funk/Funk</button>
+                <button class="genre-button" data-genre="Latin/Urbano">Latin/Urbano</button>
+                <button class="genre-button" data-genre="Aleatorio">ALEATORIO</button>
+            </div>
+            <button id="confirm-genre-button">¡A Jugar!</button>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div id="score-display">
+                <p>Puntaje Actual: <span id="current-score">0</span></p>
+                <p>Mejor Puntaje: <span id="best-score">0</span></p>
+            </div>
+
+            <h3 id="current-genre-display">Género: <span id="selected-genre-name"></span></h3>
+
+            <div id="video-player-section">
+                <h4>1. ¡Escucha el Clip!</h4>
+                <div id="youtube-player"></div>
+                <button id="play-clip-button">Reproducir Clip</button>
+            </div>
+
+            <div id="question-section">
+                <h4>2. ¿Quién sampleó este sonido?</h4>
+                <div id="options-container">
+                    </div>
+            </div>
+            <div id="feedback-message"></div>
+        </div>
+    </div>
+
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
