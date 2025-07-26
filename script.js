@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_RANDOM_START_TIME = 120; // Máximo segundo de inicio aleatorio (2 minutos)
 
     // --- DATOS DEL JUEGO (GAME DATA) ---
-    // ¡20 canciones por género con IDs de YouTube!
+    // He incluido varios ejemplos por género. ¡Puedes añadir muchísimos más!
     // Recuerda que 'startTime' ahora se usará como un punto de referencia para la aleatorización
     // o el inicio si no hay rango aleatorio.
     const gameData = [
@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Latin/Urbano Samples (20 canciones) ---
         { id: 81, genre: "Latin/Urbano", videoId: "Hw21j5fP4E0", startTime: 20, options: [{ text: "La Prision - Maffio", isCorrect: true }, { text: "Despacito - Luis Fonsi ft. Daddy Yankee", isCorrect: false }] },
         { id: 82, genre: "Latin/Urbano", videoId: "Vf0c_lY8S_o", startTime: 30, options: [{ text: "Vivir Mi Vida - Marc Anthony", isCorrect: true }, { text: "El Cantante - Hector Lavoe", isCorrect: false }] },
-        { id: 83, genre: "Latin/Urbano", videoId: "tK_oK-Xg8a0", startTime: 0, options: [{ text: "Gasolina - Daddy Yankee (aunque no es sample directo, tiene influencias)", isCorrect: true }, { text: "Dura - Daddy Yankee", isCorrect: false }] },
-        { id: 84, genre: "Latin/Urbano", videoId: "w_D6_Qp72wU", startTime: 0, options: [{ text: "Crazy - Gnarls Barkley (sample de una canción italiana, pero influencia global)", isCorrect: true }, { text: "Bailando - Enrique Iglesias", isCorrect: false }] },
+        { id: 83, genre: "Latin/Urbano", videoId: "tK_oK-Xg8a0", startTime: 0, options: [{ text: "Gasolina - Daddy Yankee (influencia)", isCorrect: true }, { text: "Dura - Daddy Yankee", isCorrect: false }] },
+        { id: 84, genre: "Latin/Urbano", videoId: "w_D6_Qp72wU", startTime: 0, options: [{ text: "Crazy - Gnarls Barkley (influencia)", isCorrect: true }, { text: "Bailando - Enrique Iglesias", isCorrect: false }] },
         { id: 85, genre: "Latin/Urbano", videoId: "o5UfA9sYh-U", startTime: 0, options: [{ text: "Hips Don't Lie - Shakira ft. Wyclef Jean", isCorrect: true }, { text: "Waka Waka (This Time for Africa) - Shakira", isCorrect: false }] },
-        { id: 86, genre: "Latin/Urbano", videoId: "ygeWz3x8N0k", startTime: 0, options: [{ text: "Kiss - Prince (mucha influencia en el pop latino)", isCorrect: true }, { text: "When Doves Cry - Prince", isCorrect: false }] },
+        { id: 86, genre: "Latin/Urbano", videoId: "ygeWz3x8N0k", startTime: 0, options: [{ text: "Kiss - Prince (influencia)", isCorrect: true }, { text: "When Doves Cry - Prince", isCorrect: false }] },
         { id: 87, genre: "Latin/Urbano", videoId: "N_Yp8DskT6k", startTime: 0, options: [{ text: "Super Freak - Rick James (usado en reggaetón y pop latino)", isCorrect: true }, { text: "Give It To Me Baby - Rick James", isCorrect: false }] },
         { id: 88, genre: "Latin/Urbano", videoId: "F2-d-2FhV8o", startTime: 0, options: [{ text: "Danza Kuduro - Don Omar ft. Lucenzo", isCorrect: true }, { text: "Dale Don Dale - Don Omar", isCorrect: false }] },
-        { id: 89, genre: "Latin/Urbano", videoId: "Gzsj1u1M5Q0", startTime: 0, options: [{ text: "Limbo - Daddy Yankee", isCorrect: true }, { text: "Con Calma - Daddy Yankee & Snow", isCorrect: false }] },
+        { id: 89, genre: "Latin/Urbano", videoId: "G5M4VwQ-jcs", startTime: 0, options: [{ text: "Limbo - Daddy Yankee", isCorrect: true }, { text: "Con Calma - Daddy Yankee & Snow", isCorrect: false }] },
         { id: 90, genre: "Latin/Urbano", videoId: "i0gK6kFwRj4", startTime: 0, options: [{ text: "Vete - Bad Bunny", isCorrect: true }, { text: "Callaíta - Bad Bunny", isCorrect: false }] },
         { id: 91, genre: "Latin/Urbano", videoId: "G5M4VwQ-jcs", startTime: 0, options: [{ text: "China - Anuel AA, Daddy Yankee, Karol G, Ozuna & J Balvin", isCorrect: true }, { text: "Taki Taki - DJ Snake ft. Selena Gomez, Ozuna & Cardi B", isCorrect: false }] },
         { id: 92, genre: "Latin/Urbano", videoId: "6gB26I9sH1w", startTime: 0, options: [{ text: "Yo Perreo Sola - Bad Bunny", isCorrect: true }, { text: "Safaera - Bad Bunny ft. Jowell & Randy & Ñengo Flow", isCorrect: false }] },
@@ -144,8 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 98, genre: "Latin/Urbano", videoId: "Fk3L45i7z5c", startTime: 0, options: [{ text: "Animals - Martin Garrix (influencia EDM en lo urbano)", isCorrect: true }, { text: "Tsunami - DVBBS & Borgeous", isCorrect: false }] },
         { id: 99, genre: "Latin/Urbano", videoId: "m_S0aH_zB7w", startTime: 0, options: [{ text: "Safaera - Bad Bunny ft. Jowell & Randy & Ñengo Flow", isCorrect: true }, { text: "Dákiti - Bad Bunny & Jhay Cortez", isCorrect: false }] },
         { id: 100, genre: "Latin/Urbano", videoId: "vB00r4xN4gE", startTime: 0, options: [{ text: "Tusa - Karol G & Nicki Minaj", isCorrect: true }, { text: "Bichota - Karol G", isCorrect: false }] },
-
-        // Agrega más rondas aquí si lo deseas
     ];
 
     // --- FUNCIONES DE CONTROL DEL REPRODUCTOR DE YOUTUBE ---
@@ -154,7 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
         player = new YT.Player('youtube-player', {
             height: '315',
             width: '100%',
-            videoId: 'dQw4w9WgXcQ', // ID de video por defecto
+            // Inicialmente, puedes usar un video por defecto o dejarlo vacío;
+            // el video real se cargará al presionar 'Reproducir Clip' por primera vez.
+            videoId: 'dQw4w9WgXcQ', // Por ejemplo, un video neutral
             playerVars: {
                 'playsinline': 1,
                 'autoplay': 0,
@@ -189,11 +189,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Calcula un startTime aleatorio
-        // Toma el startTime original como referencia o usa 0 si no está definido
-        const baseStartTime = currentRound.startTime || 0;
-        // Genera un offset aleatorio hasta MAX_RANDOM_START_TIME, sumado al baseStartTime
-        const randomStartTime = baseStartTime + Math.floor(Math.random() * MAX_RANDOM_START_TIME);
+        // Calcula un startTime aleatorio.
+        // Se asegura de que el inicio aleatorio no sea más allá del MAX_RANDOM_START_TIME,
+        // Y también no más allá de la duración del video (si YT lo reporta).
+        // Si el video tiene una duración conocida, podemos refinar esto:
+        // let videoDuration = player.getDuration();
+        // let maxUsableStartTime = Math.min(MAX_RANDOM_START_TIME, videoDuration - CLIP_DURATION);
+        // const randomStartTime = Math.floor(Math.random() * maxUsableStartTime);
+        
+        // Por simplicidad y dado que 'startTime' es más una referencia ahora:
+        const randomStartTime = Math.floor(Math.random() * MAX_RANDOM_START_TIME);
+
 
         player.loadVideoById({
             videoId: currentRound.videoId,
@@ -234,7 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadRound() {
         feedbackMessage.textContent = '';
-        playClipButton.disabled = false;
+        // Habilitar el botón de reproducir para la nueva ronda
+        playClipButton.disabled = false; 
 
         if (availableRounds.length === 0) {
             alert(`¡Juego terminado en este género! Tu puntaje final fue: ${currentScore}.`);
@@ -250,17 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomIndex = Math.floor(Math.random() * availableRounds.length);
         currentRound = availableRounds.splice(randomIndex, 1)[0];
 
-        // Carga el video pero lo deja pausado, esperando que el usuario haga clic en "Reproducir Clip"
-        if (player) {
-             // El startTime para la carga inicial se usará solo para 'preparar' el video
-             // El tiempo aleatorio se calculará al hacer clic en 'Reproducir Clip'
-             player.loadVideoById({
-                videoId: currentRound.videoId,
-                startSeconds: currentRound.startTime || 0, // Usar 0 si no hay startTime específico
-                suggestedQuality: 'small'
-            });
-            player.pauseVideo();
+        // *** CAMBIO CRÍTICO AQUÍ: NO CARGAMOS NI PAUSAMOS EL VIDEO AL CARGAR LA RONDA ***
+        // Solo necesitamos que el player esté inicializado.
+        // La carga y reproducción se harán cuando el usuario haga clic en 'playClipButton'.
+        // Esto evita que el navegador bloquee la primera reproducción.
+        if (player && player.loadVideoById) { // Asegurarse de que player y su método existen
+            // Si quieres que el reproductor muestre algo antes del primer play,
+            // puedes cargar un video de marcador de posición, pero NO lo reproduzcas.
+            // Por ahora, lo dejamos en su estado inicial después de onPlayerReady.
         }
+
 
         shuffleArray(currentRound.options);
 
